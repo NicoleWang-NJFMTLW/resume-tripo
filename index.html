@@ -579,6 +579,28 @@
     border-radius:10px;
     box-shadow:var(--shadow);
   }
+  /* ---- 导出 PDF ---- */
+  .export-btn{margin-left:auto;padding:6px 14px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:#fff;font:inherit;font-size:.82rem;cursor:pointer;white-space:nowrap}
+  .export-btn:hover{filter:brightness(1.08)}
+  @media print{
+    @page{size:A4;margin:12mm}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    :root{--bg:#ffffff;--shadow:none}
+    html{font-size:12.5px}
+    html,body{background:#fff !important}
+    *{box-shadow:none !important;text-shadow:none !important}
+    section{padding-top:14px !important;margin-top:0 !important}
+    .avatar{width:84px !important;height:84px !important}
+    nav.jumpnav,.export-btn,.copy-btn,.chip-btn,.map-btn,.map-line,.topic-toggle,.mapnote-close{display:none !important}
+    .contact-chip .chip-value{display:inline !important}
+    .contact{flex-wrap:wrap}
+    #mdpi-map{display:none !important}
+    .map-print{display:block !important;position:static !important;inset:auto !important;width:auto !important;max-height:none !important;overflow:visible !important;margin:0 0 14px !important;box-shadow:none !important;padding:12px 14px !important}
+    .block,.subgroup,details.job,.job-body,.summary-card,.timeline{break-inside:auto !important}
+    li,tr,.topic-row,.proj-head{break-inside:avoid}
+    .section-head,h4{break-after:avoid}
+    footer{display:none !important}
+  }
 </style>
 
 <div class="shell">
@@ -631,6 +653,7 @@
     <a href="#experience">工作经历</a>
     <a href="#topics">合作专栏</a>
     <a href="#education">教育背景</a>
+    <button type="button" class="export-btn" id="exportPdf">导出 PDF</button>
   </nav>
 
   <section id="summary">
@@ -840,7 +863,7 @@
       </details>
 
       <!-- FANGYUAN -->
-      <details class="job" style="--job-accent:var(--job-rose); --job-tint:var(--job-rose-tint);">
+      <details class="job" data-print-collapsed style="--job-accent:var(--job-rose); --job-tint:var(--job-rose-tint);">
         <summary>
           <div class="job-head">
             <span class="when num">2015-06 — 2019-10</span>
@@ -972,6 +995,25 @@
       topicToggle.textContent = expanded ? '收起 ↑' : '展开全部 32 条 ↓';
     });
   }
+
+  // 导出 PDF：打印前展开所有折叠内容，打印后还原
+  var openAll = function(){
+    document.querySelectorAll('details:not([data-print-collapsed])').forEach(function(d){
+      if(!d.open){ d.setAttribute('data-was-closed',''); d.open = true; }
+    });
+  };
+  var restoreAll = function(){
+    document.querySelectorAll('details[data-was-closed]').forEach(function(d){
+      d.open = false; d.removeAttribute('data-was-closed');
+    });
+  };
+  window.addEventListener('beforeprint', openAll);
+  window.addEventListener('afterprint', restoreAll);
+  var exportBtn = document.getElementById('exportPdf');
+  if(exportBtn){
+    exportBtn.addEventListener('click', function(){ openAll(); setTimeout(function(){ window.print(); }, 60); });
+  }
+  if(/[?&]print\b/.test(location.search)){ openAll(); }
 
   // nav scrollspy
   var links = Array.prototype.slice.call(document.querySelectorAll('nav.jumpnav a'));
