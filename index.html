@@ -1,0 +1,998 @@
+<!doctype html>
+<title>王聪聪 · Nicole Wang</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --bg:#f6f4f9;
+    --surface:#ffffff;
+    --surface-2:#ece7f2;
+    --border:#ddd4e8;
+    --text:#241f33;
+    --text-muted:#6b6178;
+    --text-faint:#948ba0;
+    --accent:#7d6bab;
+    --accent-strong:#584a7c;
+    --accent-tint:#efeaf8;
+    --gold:#ad7f45;
+    --gold-tint:#f5ecdc;
+    --job-teal:#3f7d78;
+    --job-teal-tint:#e5f0ee;
+    --job-rose:#a2584f;
+    --job-rose-tint:#f6e9e7;
+    --shadow: 0 1px 2px rgba(36,31,51,.05), 0 8px 24px -12px rgba(36,31,51,.12);
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#17151d;
+      --surface:#1e1b26;
+      --surface-2:#252030;
+      --border:#332c40;
+      --text:#eae7ee;
+      --text-muted:#aca2b8;
+      --text-faint:#7d7389;
+      --accent:#b6a4e0;
+      --accent-strong:#cabdea;
+      --accent-tint:#2c2438;
+      --gold:#dcb37a;
+      --gold-tint:#3a2f22;
+      --job-teal:#7fb8b0;
+      --job-teal-tint:#1c2e2b;
+      --job-rose:#d18f86;
+      --job-rose-tint:#33231f;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#17151d;
+    --surface:#1e1b26;
+    --surface-2:#252030;
+    --border:#332c40;
+    --text:#eae7ee;
+    --text-muted:#aca2b8;
+    --text-faint:#7d7389;
+    --accent:#b6a4e0;
+    --accent-strong:#cabdea;
+    --accent-tint:#2c2438;
+    --gold:#dcb37a;
+    --gold-tint:#3a2f22;
+    --job-teal:#7fb8b0;
+    --job-teal-tint:#1c2e2b;
+    --job-rose:#d18f86;
+    --job-rose-tint:#33231f;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"IBM Plex Sans", "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;}
+  [hidden]{display:none!important;}
+  a{color:var(--accent-strong); text-decoration-color: var(--border); text-underline-offset:3px;}
+  a:hover{text-decoration-color: currentColor;}
+
+  .serif{font-family:"Newsreader","Songti SC","STSong",serif;}
+  .num{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums;}
+
+  .shell{
+    max-width:920px;
+    margin:0 auto;
+    padding-inline:20px;
+    padding-block: 40px 80px;
+  }
+
+  /* ---- masthead ---- */
+  .masthead{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px 40px;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding-bottom:28px;
+    border-bottom:1px solid var(--border);
+    margin-bottom:36px;
+  }
+  .identity{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    gap:18px;
+    flex:1 1 380px;
+  }
+  .avatar{
+    flex:none;
+    width:112px;
+    height:112px;
+    border-radius:20px;
+    object-fit:cover;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    background:var(--surface);
+  }
+  .masthead h1{
+    font-family:"Newsreader",serif;
+    font-weight:600;
+    font-size:clamp(2rem, 5vw, 2.75rem);
+    letter-spacing:.01em;
+    margin:0 0 6px;
+    text-wrap:balance;
+  }
+  .masthead .role{
+    color:var(--text-muted);
+    font-size:1.02rem;
+    margin:0;
+  }
+  .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:14px;
+  }
+  .tag{
+    font-size:.78rem;
+    padding:4px 11px;
+    border-radius:999px;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    color:var(--text-muted);
+    white-space:nowrap;
+  }
+  .contact{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    align-items:center;
+    gap:8px;
+    padding-top:8px;
+  }
+  @media (max-width:600px){
+    .contact{justify-content:flex-start;}
+  }
+  .contact-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--accent-tint);
+    border:1px solid var(--border);
+    border-radius:999px;
+    padding:8px;
+    font-size:.82rem;
+    color:var(--accent-strong);
+    white-space:nowrap;
+  }
+  .contact-chip .icon{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:16px;
+    height:16px;
+    flex:none;
+  }
+  .contact-chip:hover,
+  .contact-chip.revealed{
+    padding:6px 8px 6px 10px;
+  }
+  .contact-chip .chip-value{
+    display:none;
+    color:var(--text);
+    user-select:text;
+  }
+  .contact-chip.revealed .chip-value{
+    display:inline;
+  }
+  .contact-chip .chip-btn{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    width:22px; height:22px;
+    flex:none;
+    border-radius:50%;
+    border:none;
+    background:var(--surface);
+    color:var(--text-muted);
+    font-size:.74rem;
+    line-height:1;
+    cursor:pointer;
+    text-decoration:none;
+    padding:0;
+  }
+  .contact-chip.revealed .chip-btn{
+    display:inline-flex;
+  }
+  .contact-chip .chip-btn:hover{background:var(--accent-tint); color:var(--accent-strong);}
+
+  /* ---- nav ---- */
+  nav.jumpnav{
+    position:sticky;
+    top: calc(env(safe-area-inset-top, 0px) + 0px);
+    z-index:5;
+    display:flex;
+    gap:4px;
+    overflow-x:auto;
+    background:var(--bg);
+    padding:6px;
+    margin-bottom:28px;
+    border:1px solid var(--border);
+    border-radius:12px;
+  }
+  nav.jumpnav a{
+    flex:none;
+    font-size:.82rem;
+    font-weight:500;
+    color:var(--text-muted);
+    text-decoration:none;
+    padding:7px 14px;
+    border-radius:8px;
+    white-space:nowrap;
+    transition:background .15s, color .15s;
+  }
+  nav.jumpnav a:hover{background:var(--surface-2); color:var(--text);}
+  nav.jumpnav a.active{background:var(--accent); color:#fff;}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) nav.jumpnav a.active{color:#1a1622;}
+  }
+  :root[data-theme="dark"] nav.jumpnav a.active{color:#1a1622;}
+
+  /* ---- sections ---- */
+  section{margin-bottom:52px; scroll-margin-top: 56px;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .section-head .idx{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.75rem;
+    color:var(--gold);
+    letter-spacing:.06em;
+  }
+  .section-head h2{
+    font-family:"Newsreader",serif;
+    font-weight:600;
+    font-size:1.5rem;
+    margin:0;
+  }
+
+  .summary-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:22px 24px;
+    box-shadow:var(--shadow);
+  }
+  .summary-card p{margin:0 0 12px;}
+  .summary-card p:last-child{margin-bottom:0;}
+  .summary-card ul{margin:0; padding-left:1.15em;}
+  .summary-card li{margin-bottom:8px;}
+  .summary-card li:last-child{margin-bottom:0;}
+
+  /* ---- job cards (one per company, own accent) ---- */
+  .timeline{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .job{
+    position:relative;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:4px solid var(--job-accent, var(--accent));
+    border-radius:12px;
+    box-shadow:var(--shadow);
+    padding:20px 22px;
+  }
+  details.job{padding:0;}
+  details.job > summary{
+    cursor:pointer;
+    list-style:none;
+    padding:20px 22px;
+    border-radius:12px;
+  }
+  details.job > summary::-webkit-details-marker{display:none;}
+  details.job > summary::marker{content:"";}
+  details.job:not([open]) > summary:hover{background:var(--job-tint, var(--accent-tint));}
+  details.job > .job-body{
+    padding:14px 22px 22px;
+    border-top:1px dashed var(--border);
+  }
+  details.job[open] > summary{padding-bottom:14px; border-radius:12px 12px 0 0;}
+  .job-chevron{
+    flex:none;
+    width:22px; height:22px;
+    border-radius:50%;
+    display:inline-flex; align-items:center; justify-content:center;
+    background:var(--job-tint, var(--accent-tint));
+    color:var(--job-accent, var(--accent));
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.72rem;
+  }
+  details.job[open] .job-chevron::before{content:"–";}
+  details.job:not([open]) .job-chevron::before{content:"+";}
+  .job-current-badge{
+    font-size:.68rem;
+    letter-spacing:.04em;
+    color:var(--job-accent, var(--accent));
+    background:var(--job-tint, var(--accent-tint));
+    border-radius:999px;
+    padding:2px 9px;
+    flex:none;
+  }
+  .job-head{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    margin-bottom:4px;
+  }
+  .job-head .job-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .job-head h3{
+    font-family:"Newsreader",serif;
+    font-weight:600;
+    font-size:1.2rem;
+    margin:0;
+  }
+  .job-head .when{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.76rem;
+    letter-spacing:.03em;
+    color:var(--job-accent, var(--text-faint));
+    white-space:nowrap;
+  }
+  .job-head .when::before{
+    content:"";
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--job-accent, var(--text-faint));
+    flex:none;
+  }
+  .job .place{
+    color:var(--text-muted);
+    font-size:.92rem;
+    margin:0 0 14px;
+  }
+  details.job .place{margin-bottom:0;}
+  .job .teaser{
+    color:var(--text-muted);
+    font-size:.88rem;
+    margin:6px 0 0;
+  }
+  .job .thesis{
+    font-size:.96rem;
+    margin:16px 0 16px;
+    padding:12px 14px;
+    background:var(--job-tint, var(--accent-tint));
+    border-radius:8px;
+    color:var(--text);
+  }
+  .job .org-blurb{
+    font-size:.9rem;
+    color:var(--text-muted);
+    margin:0 0 18px;
+    padding-bottom:16px;
+    border-bottom:1px dashed var(--border);
+  }
+
+
+  .block{margin-bottom:20px;}
+  .block:last-child{margin-bottom:0;}
+  .block h4{
+    font-size:.98rem;
+    font-weight:600;
+    margin:0 0 8px;
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+  }
+  .block h4 .b-idx{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:.75rem;
+    color:var(--gold);
+  }
+  .block ul{margin:0; padding-left:1.15em;}
+  .block li{margin-bottom:7px; font-size:.94rem;}
+  .block li:last-child{margin-bottom:0;}
+  .block li b, .job li b{color:var(--text); font-weight:600;}
+
+  details.subgroup{
+    border:1px solid var(--border);
+    border-radius:10px;
+    margin-bottom:10px;
+    background:var(--surface);
+  }
+  details.subgroup:last-child{margin-bottom:0;}
+  details.subgroup summary{
+    cursor:pointer;
+    list-style:none;
+    padding:12px 14px;
+    font-weight:600;
+    font-size:.92rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+  }
+  details.subgroup summary::-webkit-details-marker{display:none;}
+  details.subgroup summary::after{
+    content:"+";
+    font-family:"IBM Plex Mono", monospace;
+    color:var(--text-faint);
+    font-weight:400;
+  }
+  details.subgroup[open] summary::after{content:"–";}
+  details.subgroup .subbody{
+    padding:0 14px 14px;
+  }
+  details.subgroup ul{margin:0; padding-left:1.1em;}
+  details.subgroup li{margin-bottom:7px; font-size:.92rem;}
+  details.subgroup li:last-child{margin-bottom:0;}
+
+  /* ---- projects ---- */
+  .proj{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:18px 20px;
+    margin-bottom:14px;
+  }
+  .proj:last-child{margin-bottom:0;}
+  .proj-head{
+    display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+  .proj-head h3{font-family:"Newsreader",serif; font-size:1.08rem; font-weight:600; margin:0;}
+  .proj-head .when{font-family:"IBM Plex Mono",monospace; font-size:.76rem; color:var(--text-faint);}
+  .proj p{margin:0 0 10px; font-size:.92rem; color:var(--text-muted);}
+
+  /* ---- topic list (合作专栏) ---- */
+  .section-lede{
+    font-size:.94rem;
+    color:var(--text-muted);
+    margin:0 0 18px;
+    max-width:65ch;
+  }
+  .topic-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .topic-row{
+    padding:13px 18px;
+    border-bottom:1px solid var(--border);
+  }
+  .topic-row:last-child{border-bottom:none;}
+  .topic-extra{display:none;}
+  .topic-list.expanded .topic-extra{display:block;}
+  .topic-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    width:100%;
+    margin-top:12px;
+    padding:11px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    color:var(--text-muted);
+    font-size:.86rem;
+    font-weight:500;
+    cursor:pointer;
+  }
+  .topic-toggle:hover{background:var(--surface-2); color:var(--text);}
+  .topic-line{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .topic-idx{
+    color:var(--text-faint);
+    font-size:.78rem;
+    flex:none;
+  }
+  .topic-title{
+    flex:1 1 320px;
+    font-weight:500;
+    font-size:.95rem;
+    color:var(--text);
+    text-decoration-color:var(--border);
+  }
+  .topic-title:hover{color:var(--accent-strong);}
+  .topic-ge{
+    margin:5px 0 0 calc(1.6rem);
+    font-size:.8rem;
+    color:var(--text-muted);
+    line-height:1.6;
+  }
+  @media (max-width:520px){
+    .topic-ge{margin-left:0;}
+  }
+
+  /* ---- footer grid ---- */
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:32px;
+  }
+  @media (max-width:640px){ .foot-grid{grid-template-columns:1fr;} }
+  .foot-grid .edu-org{font-weight:600;}
+  .foot-grid .edu-meta{color:var(--text-muted); font-size:.9rem;}
+  .pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
+  .pill{
+    font-size:.8rem;
+    padding:4px 12px;
+    border-radius:999px;
+    background:var(--gold-tint);
+    color:var(--gold);
+    border:1px solid transparent;
+  }
+  .pill-neutral{background:var(--surface-2); color:var(--text-muted);}
+
+  footer{
+    margin-top:60px;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+    color:var(--text-faint);
+    font-size:.8rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .foot-wechat{display:flex; align-items:center; gap:12px;}
+  /* 白底留白：深色模式下二维码也保持黑白高对比，才扫得出来 */
+  .foot-wechat img{
+    width:96px;
+    height:96px;
+    padding:6px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    box-shadow:var(--shadow);
+  }
+</style>
+
+<div class="shell">
+
+  <header class="masthead">
+    <div class="identity">
+      <img class="avatar" src="avatar-cats.png" alt="王聪聪和六只猫（还有一只客串猫头鹰）的3D手办插画" width="112" height="112">
+      <div>
+        <h1>王聪聪 <span style="color:var(--text-muted); font-weight:400; font-size:.6em;">Nicole Wang</span></h1>
+        <p class="role">用户增长 · 高校与机构合作 · 10年经验</p>
+        <div class="tags">
+          <span class="tag">10年经验</span>
+          <span class="tag">北京</span>
+          <span class="tag">ENTJ</span>
+          <span class="tag">用户分层增长</span>
+          <span class="tag">高校与机构合作</span>
+          <span class="tag">AI 工具</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="contact-chip">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span class="chip-value num">18518613512</span>
+        <button type="button" class="chip-btn copy-btn" data-copy="18518613512" aria-label="复制电话号码" title="复制">📋</button>
+      </div>
+      <div class="contact-chip">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+        <span class="chip-value">Nicole_NJFMTL@163.com</span>
+        <a class="chip-btn" href="mailto:Nicole_NJFMTL@163.com" aria-label="发送邮件" title="发送邮件">✉️</a>
+        <button type="button" class="chip-btn copy-btn" data-copy="Nicole_NJFMTL@163.com" aria-label="复制邮箱地址" title="复制">📋</button>
+      </div>
+      <div class="contact-chip">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+        <span class="chip-value">0815nicolewang@gmail.com</span>
+        <a class="chip-btn" href="mailto:0815nicolewang@gmail.com" aria-label="发送邮件" title="发送邮件">✉️</a>
+        <button type="button" class="chip-btn copy-btn" data-copy="0815nicolewang@gmail.com" aria-label="复制邮箱地址" title="复制">📋</button>
+      </div>
+      <div class="contact-chip">
+        <a class="icon" href="https://www.linkedin.com/in/nicole-wang-097863427/" target="_blank" rel="noopener" aria-label="打开领英主页" title="打开领英主页"><svg viewBox="0 0 24 24" width="16" height="16"><rect width="24" height="24" rx="4" fill="var(--accent-strong)"/><path fill="#fff" d="M7.12 9.4H4.5v9.7h2.62V9.4zM5.81 8.2a1.52 1.52 0 1 0 0-3.04 1.52 1.52 0 0 0 0 3.04zM19.5 13.6c0-2.6-1.4-3.8-3.26-3.8-1.5 0-2.17.82-2.55 1.4V9.4h-2.62c.03.7 0 9.7 0 9.7h2.62v-5.42c0-.29.02-.58.11-.79.24-.58.78-1.19 1.7-1.19 1.2 0 1.68.91 1.68 2.25v5.15h2.62V13.6z"/></svg></a>
+        <span class="chip-value">linkedin.com/in/nicole-wang-097863427</span>
+        <button type="button" class="chip-btn copy-btn" data-copy="https://www.linkedin.com/in/nicole-wang-097863427/" aria-label="复制领英链接" title="复制">📋</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="jumpnav">
+    <a href="#summary">自我评价</a>
+    <a href="#projects">项目经验</a>
+    <a href="#experience">工作经历</a>
+    <a href="#topics">合作专栏</a>
+    <a href="#education">教育背景</a>
+  </nav>
+
+  <section id="summary">
+    <div class="section-head"><span class="idx">01</span><h2>自我评价</h2></div>
+    <div class="summary-card">
+      <p>4年咨询，近6年外企科技学术出版及科研文献数据库工作经验，2026年主导AI4Science人才对接业务从0到1搭建；擅长用户分层增长、高校与机构合作拓展，以及借助数据和AI工具搭建业务系统。核心优势：</p>
+      <ul>
+        <li><b>用户分层与增长：</b>主导FP免费发表增长项目，设计学者个人与高校机构两条线，与上一年发文数据对比，投稿量增长40%、核心作者复投率提升35%；主导约100个热点专栏，二次合作率超50%。</li>
+        <li><b>高校与机构合作：</b>在东壁新增20+家机构客户（含试用与正式签约），推进中订单金额数十万元，其中约5万元进入落地阶段；在MDPI期间赴高校开展作者培训会、宣讲会，与院系老师直接对接。</li>
+        <li><b>业务与系统从0到1：</b>在Audax Lab设计学者供给与企业需求双边撮合机制；借助AI编程工具搭建三个数据互通的系统和运营看板，独立完成数据清洗、匹配与分析。</li>
+        <li><b>全球学者资源：</b>累计建联十几万学者，与约2000名高影响力学者保持合作；在Audax Lab从零搭建学者池，现有记录近4000条。</li>
+        <li><b>团队管理：</b>管理约20人团队，推动小组业绩从后三名提升至前三名；累计面试200+人，培养60+人才，输出10+业务骨干。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head"><span class="idx">02</span><h2>项目经验</h2></div>
+
+    <div class="proj">
+      <div class="proj-head">
+        <h3>FP项目 · 学术期刊免费发表增长项目【负责人】</h3>
+        <span class="when num">2023-01 — 2024-10</span>
+      </div>
+      <p><b>背景：</b>期刊每年年中影响因子发布后，按免费发文比例和发文数据重新布局下半年目标；借公司周年推出免费发表（FP）计划，以免费名额撬动投稿与特刊增长。</p>
+      <p><b>双线设计：</b>个人线面向学者个人发放免费名额，按历史数据将作者分为高/中/低活跃群体，差异化激励（高活跃：优先审稿；中活跃：投稿奖励；低活跃：定向邀约）；机构线邀请高校学院负责人作为项目负责人，以学院为单位共同发起。</p>
+      <p><b>增长逻辑：</b>免费名额带动特刊与投稿量增长，配合学者背景审核与发表后推广保障质量和传播，提升期刊影响力，进而吸引更多高质量学者。</p>
+      <p><b>结果：</b>与上一年发文数据对比，投稿量增长40%，核心作者复投率提升35%，覆盖10万+学者。</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-head"><span class="idx">03</span><h2>工作经历</h2></div>
+    <div class="timeline">
+
+      <!-- AUDAX LAB -->
+      <details class="job" open style="--job-accent:var(--accent); --job-tint:var(--accent-tint);">
+        <summary>
+          <div class="job-head">
+            <span class="when num">2026-08 — 至今</span>
+            <div class="job-title"><span class="job-chevron"></span><h3>Audax Lab · 学术生态负责人</h3><span class="job-current-badge">现任</span></div>
+          </div>
+          <p class="place">北京</p>
+          <p class="teaser">AI for Science人才与协作平台机构，团队汇聚全球30余所顶尖高校研究者。</p>
+        </summary>
+        <div class="job-body">
+        <p class="org-blurb">Audax Lab是一家用AI攻克科学挑战、为复杂长周期科研任务搭建协作平台的AI for Science机构，业务分两大板块：<b>AI4S研究</b>（应用AI驱动流体力学、生命科学、材料科学领域研究）与<b>协作平台</b>（帮助企业拆解定义问题、设计实验、验证结果，从小规模验证推进到产线部署）。团队汇聚来自Stanford、MIT、UC Berkeley、清华、北大、普林斯顿等30余所全球顶尖高校的STEM研究者，在离散与计算几何、代数几何等方向有自有研究成果；与一家全球领先的LLM实验室合作处理长周期任务，识别长链推理与工具调用中的失败模式并构建可复用评测体系；曾为一家顶级LLM独角兽绘制全球研究人员分布图谱、重构AI研究组织架构。</p>
+
+        <p class="thesis">从零搭建AI4S人才对接业务：建立全球学者供给池和企业需求池，设计双向撮合机制，并主导搭建三个共享同一数据源的系统，支撑团队运营。</p>
+
+        <div class="block">
+          <h4><span class="b-idx">1</span> 业务规划与目标管理</h4>
+          <ul>
+            <li>从0到1设计学者/企业双向合作模式（学者带项目、Lab发起项目、联合企业发起项目），业务覆盖人才撮合、数据合成与专家评测、顾问服务三类。</li>
+            <li>带领3人小组完成业务规划、渠道拓展与复盘。</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h4><span class="b-idx">2</span> 学者供给侧建设</h4>
+          <ul>
+            <li>建立学者画像与四维学术影响力评分体系，通过学术数据库、领英、熟人转介绍等渠道招募。</li>
+            <li>学者池现已覆盖全球30余所顶尖高校近4,000人。</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h4><span class="b-idx">3</span> 企业需求侧拓展</h4>
+          <ul>
+            <li>搭建覆盖大模型/AI4Science/生物医药/材料化学/具身智能/数学物理六大方向的企业池（80+家）。</li>
+            <li>设计企业需求与学者方向的匹配逻辑及B端获客打法。</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h4><span class="b-idx">4</span> 社媒运营与社区活动</h4>
+          <ul>
+            <li>统筹领英、小红书双平台运营，面向海外学者和企业决策人做精准连接。</li>
+            <li>策划线上沙龙及闭门交流活动，提升机构影响力。</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <h4><span class="b-idx">5</span> 系统搭建</h4>
+          <ul>
+            <li>借助AI编程工具主导设计并搭建三个数据互通的系统，支撑团队协作：ScholarOS（内部学者/企业一体化管理CRM，含运营看板）、Audax Fellow（对外学者社区站）、AI4S工作台（对外市场素材站）。</li>
+          </ul>
+        </div>
+        </div>
+      </details>
+
+      <!-- DONGBI -->
+      <details class="job" style="--job-accent:var(--job-teal); --job-tint:var(--job-teal-tint);">
+        <summary>
+          <div class="job-head">
+            <span class="when num">2025-04 — 2025-10</span>
+            <div class="job-title"><span class="job-chevron"></span><h3>东壁科技数据有限责任公司 · 市场部：商务经理【高校合作】</h3></div>
+          </div>
+          <p class="place">北京</p>
+          <p class="teaser">科技文献数据库高校与机构拓展（B2B），新增20+家机构客户（含试用与正式签约）。</p>
+        </summary>
+        <div class="job-body">
+        <ul>
+          <li><b>高校机构拓展与关系维护：</b>负责科技文献数据库dbdata及ResearchTool产品的市场分析，高校、机构、协会拓展，通过邮件、拜访及学术会议交流，与国内重点高校专家&院长、学会负责人、图书馆及学术出版社建立合作联系；在职期间成功拓展20+家新机构客户（含试用与正式签约），推进中订单金额数十万元，其中约5万元进入落地阶段；参与标书撰写审核与竞标流程。</li>
+          <li><b>学术合作：</b>需求诊断与方案对接——针对期刊运营现状，从学术研究热点、专家学术背景、论文质量、作者群体分布、引用情况等维度进行全盘诊断，根据客户需求及产品能力转化为可实施项目合作方案。</li>
+          <li><b>产品优化：</b>追踪行业动态，结合用户反馈，协同技术团队推动ResearchTool版本功能迭代（使用功能点、权限管理），通过调用大模型能力使RT更智能化，提升产品在学术场景下的适配度。</li>
+          <li><b>业务流程标准化：</b>针对客户关系管理与跟进工作，建立标准化流程，提升运营效率。</li>
+          <li><b>品牌宣传：</b>参与多场学术会议（负责赞助谈判、展台策划、宣传物料对接、海报设计及大会宣讲等）；参与"全球数字经济大会"支持（品宣支持、宣传物料准备、拍摄素材供记者及央视报道使用、协助对接媒体采访等），扩大公司在目标客户群体及学术圈的影响力。</li>
+        </ul>
+        </div>
+      </details>
+
+      <!-- MDPI -->
+      <details class="job" style="--job-accent:var(--gold); --job-tint:var(--gold-tint);">
+        <summary>
+          <div class="job-head">
+            <span class="when num">2019-11 — 2024-10</span>
+            <div class="job-title"><span class="job-chevron"></span><h3>曼迪匹艾（北京）科技服务有限公司 · Editor & Team leader【学术合作 & 团队负责人】</h3></div>
+          </div>
+          <p class="place">北京</p>
+          <p class="teaser">5年全球学术合作与期刊运营，管理20人团队，主导100+热点专栏策划。</p>
+        </summary>
+        <div class="job-body">
+
+        <details class="subgroup" open>
+          <summary>全球专家学者合作运营</summary>
+          <div class="subbody">
+            <ul>
+              <li>通过数据提取&过滤&清洗、定向邀约，官方招募，推荐激励，研讨会，学术会议，线下高校拜访等方式，累计建联十几万学者，与约2,000名高影响力专家教授保持良好合作关系，在识别高潜力高影响力专家方面具备成熟方法论。</li>
+              <li>依据学者学术背景、成果活跃度及合作网络进行分层管理与运营，支撑不同层级学术合作需求；合作领域覆盖可持续发展、AI、大数据、智能交通、能源、经济等方向。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="subgroup">
+          <summary>高校合作与校园招聘</summary>
+          <div class="subbody">
+            <ul>
+              <li>参加校园招聘，高校拜访接洽院系负责老师开展作者培训会、宣讲会、学术出版交流会等，促成多场校园招聘、宣讲及学术培训落地。</li>
+              <li>通过线下拜访与学术会议交流，与高校老师探讨开展学术项目合作/加入期刊专家库的可能性，增进校企合作关系。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="subgroup">
+          <summary>学术期刊学科运营与影响力提升</summary>
+          <div class="subbody">
+            <ul>
+              <li>负责可持续发展、物流、交通、智慧城市、供应链、bigdata、能源存储、碳中和、AI应用，宗教、哲学、人文、医药等领域期刊日常运营，包括专家招募管理、研究项目合作、论文管理&质量把控、数据监管；负责期刊整体发展方向、发文数量、质量等数据监督与预算管理。</li>
+              <li>通过学术成果定向推送（issue cover、newsletter、title story等定期推广素材）、奖项设定及社交媒体运营（Twitter / LinkedIn / 公众号），提升期刊在目标学者群体中的可见度与互动率。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="subgroup">
+          <summary>跨领域学术热点项目策划与全周期管理</summary>
+          <div class="subbody">
+            <ul>
+              <li>针对学术发表研究成果及最新研究项目&热点进行可行性调研分析，主导策划并上线约<b>100个</b>热点研究项目/专栏（平均每个由来自3个不同国家的教授共同开展），累计联系学者3w+，收集投稿2k+篇，成功发表约1k篇。</li>
+              <li>负责合作前学者调研、合作计划洽谈、项目推进与复盘的全流程管理，项目二次合作率超50%。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="subgroup">
+          <summary>论文管理</summary>
+          <div class="subbody">
+            <ul>
+              <li>文章初筛与发表前后质量检查，包括但不限于：作者学术背景、研究诚信、文章关联性、文章是否具备新颖性等。</li>
+              <li>负责组织sustainability、pathogens、societies、pharmacy、religions、humanities、education sciences、future transportation、pediatric reports等领域学术发表全流程管理：同行评审，作者、审稿人、编委答疑，文章校对检查等。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="subgroup">
+          <summary>流程优化与数据驱动提效</summary>
+          <div class="subbody">
+            <ul>
+              <li>主导小组内文章处理及专栏合作流程标准化建设；推动技术团队在系统内增设论文跟进管理监督窗口，减少重复性办公和优化监管方式。</li>
+              <li>高质量论文邀约通过指标优化控制了2023年期刊发表量降低的局面，并在2024年得到提升。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="subgroup">
+          <summary>团队搭建与绩效管理</summary>
+          <div class="subbody">
+            <ul>
+              <li>管理约20人团队，建立周/半月/月数据监督及季度复盘机制，推动小组业绩从后三名提升至前三名，个人业绩稳定在前10%。</li>
+              <li>负责招聘面试（累计200+）、岗前培训（50+场）及新人带教，标准化带教体系累计培养60+人才，输出10+业务管理骨干。</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="subgroup">
+          <summary>培训、市场与Mentor</summary>
+          <div class="subbody">
+            <ul>
+              <li>负责岗前培训：业务主讲、材料发放，并为培训生答疑及判定成绩，累计负责岗前培训50余次。</li>
+              <li>组织小组/科室的经验分享和案例分析，挖掘协调业绩出色的同事做分享30余次；总结各模块常用邮件模板并系统化沉淀，协调科室海外培训安排。</li>
+              <li>主导Twitter（X）新媒体矩阵运营，通过热点选题+内容分层策略，实现粉丝量增长、互动率提升。</li>
+              <li>作为4名AE与6名SME的Mentor：负责新入职及转型期员工的知识传授和疑难解答，包括工作开展方式、流程梳理与解疑思路、复盘方法，引导团队形成"计划-执行-结果-复盘"的良好工作习惯。</li>
+            </ul>
+          </div>
+        </details>
+        </div>
+      </details>
+
+      <!-- FANGYUAN -->
+      <details class="job" style="--job-accent:var(--job-rose); --job-tint:var(--job-rose-tint);">
+        <summary>
+          <div class="job-head">
+            <span class="when num">2015-06 — 2019-10</span>
+            <div class="job-title"><span class="job-chevron"></span><h3>北京方源房地产咨询服务有限公司 · 交易流程咨询顾问（业务运营）</h3></div>
+          </div>
+          <p class="teaser">B/C端交易全流程运营，主导300+笔交易管理与经纪人培训体系。</p>
+        </summary>
+        <div class="job-body">
+        <ul>
+          <li><b>业务运营与风险管理：</b>主导300+笔B端/C端交易全流程管理；设计风险预警机制，识别并化解50+件高风险交易单，降低业务风险；推行"交易流程满意度评价系统"，通过数据驱动优化服务流程，使客户满意度在两季度内实现倍增。</li>
+          <li><b>团队培训与业务支持：</b>负责运营端银行政策、监管要求及金融产品培训，标准化交易流程SOP及培训课程，赋能1,000+经纪人，累计培训场次200+，参训人员覆盖率99%；建立疑难案例库与解决方案手册，提升问题解决效率。</li>
+          <li><b>公证业务支持：</b>作为公证业务助理，全程支持公证事务办理，包括客户咨询解答、材料预审、现场取证（录音/录像/影像记录）及出证协调，协助完成金融类公证业务150+件，确保合规性与时效性。</li>
+        </ul>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+  <section id="topics">
+    <div class="section-head"><span class="idx">04</span><h2>合作专栏</h2></div>
+    <p class="section-lede">"优秀话题"负责人（2020-04 — 2024-10）期间，与跨学科专家合作策划、运营并推广的高影响力热点话题，均由对应领域的专家学者作为 Guest Editor 联合主持：</p>
+    <ol class="topic-list">
+      <li class="topic-row"><div class="topic-line"><span class="topic-idx num">01</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Safe_Transportation_Sus" target="_blank" rel="noopener">Accident Prevention and Risk Management for Safe and Sustainable Transportation</a></div><div class="topic-ge">GE：Juneyoung Park（Hanyang University，South Korea）· Yina Wu（University of Central Florida，USA）· Hochul Park（Myongji University，South Korea）</div></li>
+      <li class="topic-row"><div class="topic-line"><span class="topic-idx num">02</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Emerging_Technologies_Road_Safety" target="_blank" rel="noopener">Emerging Technologies and Sustainable Road Safety</a></div><div class="topic-ge">GE：Ali Pirdavani（Hasselt University，Belgium）</div></li>
+      <li class="topic-row"><div class="topic-line"><span class="topic-idx num">03</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/circular_bioeconomy_sust" target="_blank" rel="noopener">Sustainable Circular Bioeconomy</a></div><div class="topic-ge">GE：Manoj Kumar Nallapaneni（City University of Hong Kong，Hong Kong）· Md Ariful Haque（City University of Hong Kong，Hong Kong）· Sarif Patwary（University of Houston，USA）</div></li>
+      <li class="topic-row"><div class="topic-line"><span class="topic-idx num">04</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Maritime_Policy_Management" target="_blank" rel="noopener">Sustainable Maritime Policy and Management</a></div><div class="topic-ge">GE：Alessandro Farina（University of Pisa，Italy）</div></li>
+      <li class="topic-row"><div class="topic-line"><span class="topic-idx num">05</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Social_Development_of_Under-Served_Communities" target="_blank" rel="noopener">Research Contributions to the Social Development of Under-Served Communities</a></div><div class="topic-ge">GE：Ramon Flecha（University of Barcelona，Spain）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">06</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/sustainable_information" target="_blank" rel="noopener">Sustainable Information Systems</a></div><div class="topic-ge">GE：Osama Sohaib（University of Technology Sydney，Australia / American University of Ras Al Khaimah，UAE）· Muhammad Asif（National Textile University，Pakistan）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">07</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/technology_construction" target="_blank" rel="noopener">Technology, Organisation and Management in Sustainable Construction</a></div><div class="topic-ge">GE：Elżbieta Radziszewska-Zielina · Małgorzata Fedorczak-Cisak · Grzegorz Śladowski（均 Cracow University of Technology，Poland）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">08</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Concrete_Materials_and_Technologies_for_Sustainable_and_Resilient_Construction" target="_blank" rel="noopener">Concrete Materials and Technologies for Sustainable and Resilient Construction</a></div><div class="topic-ge">GE：Adebayo O. Sojobi（Hong Kong Polytechnic University，Hong Kong）· Olabode E. Ogunmakinde（Bond University，Australia）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">09</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Urban_Climate_Change_Transport_Geography_Smart_Cities" target="_blank" rel="noopener">Urban Climate Change, Transport Geography and Smart Cities</a></div><div class="topic-ge">GE：Jun Yang（Northeastern University / Liaoning Normal University，China）· Bing Xue（Chinese Academy of Sciences，China）· Jianhong (Cecilia) Xia（Curtin University，Australia）· Dongqi Sun（Chinese Academy of Sciences，China）· Ye Wei（Northeast Normal University，China）· Zhi Qiao（Tianjin University，China）· Enxu Wang（Northeastern University，China）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">10</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Energy_Carbon_Efficiency" target="_blank" rel="noopener">Towards Sustainability: Energy and Carbon Efficiency</a></div><div class="topic-ge">GE：Jinsoo Kim（Hanyang University，South Korea）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">11</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Transportation_Safety_Pavement_Management" target="_blank" rel="noopener">Transportation Safety and Pavement Management</a></div><div class="topic-ge">GE：Maria Rosaria De Blasiis · Chiara Ferrante（均 Roma Tre University，Italy）· Valerio Veraldi（E-RIS，Italy）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">12</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Sustain_Transport_Policy_Environ_Management_Energy_Economic_Development" target="_blank" rel="noopener">Sustainable Transport Policy, Environmental Management and Energy Economic Development</a></div><div class="topic-ge">GE：Ling Yun He（Academy of Mathematics and Systems Science, CAS，China）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">13</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/entrepreneurial_education" target="_blank" rel="noopener">Entrepreneurial Education Strengthening Resilience, Societal Change and Sustainability</a></div><div class="topic-ge">GE：Priti Verma（Higher Colleges of Technology，UAE）· Maria Salomaa · Jaana Seikkula-Leino（均 Tampere University，Finland）· Mats Westerberg（Luleå University of Technology，Sweden）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">14</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Sustainability_Methods_Passenger_Freight" target="_blank" rel="noopener">Methods for Improving Sustainability of Passenger and Freight Transport</a></div><div class="topic-ge">GE：Maxim A. Dulebenets（FAMU-FSU College of Engineering，USA）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">15</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Sustainable_Supply_Chain_Management_Social_Economic_Environmental" target="_blank" rel="noopener">Sustainable Supply Chain Management: Social, Economic and Environmental Aspects</a></div><div class="topic-ge">GE：Marija Bogataj（Univ. of Ljubljana，Slovenia）· Francisco Campuzano-Bolarín（Universidad Politécnica de Cartagena，Spain）· Suresh P. Sethi（University of Texas at Dallas，USA）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">16</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Sustain_Transport_Energy_Environ_Impact_Assessment" target="_blank" rel="noopener">Sustainable Transport Services, Energy Policy, and Environmental Impact Assessment</a></div><div class="topic-ge">GE：Eva Llera（University of Zaragoza，Spain）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">17</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Sustain_Urban_Freight_Transport_City_Logistics_and_Transportation" target="_blank" rel="noopener">Sustainable Urban Freight Transport, City Logistics and Transportation</a></div><div class="topic-ge">GE：Juliang Zhang · Wenchao Wei · Yefei Yang（均 Beijing Jiaotong University，China）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">18</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Marketing_Innovation_Science_Technological" target="_blank" rel="noopener">Marketing of Innovation, Science and Technological Change</a></div><div class="topic-ge">GE：Vida Davidavičienė（Vilnius Gediminas Technical University，Lithuania）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">19</span><a class="topic-title" href="https://www.mdpi.com/journal/pharmacy/special_issues/Addiction_Mental_Health" target="_blank" rel="noopener">Addiction and Mental Health in Pharmacy</a></div><div class="topic-ge">GE：Beth Ann Sproule（CAMH, University of Toronto，Canada）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">20</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Resource_Utilization_and_Environmental_Protection_in_Mining_Industry" target="_blank" rel="noopener">Sustainable Resource Utilization and Environmental Protection in Mining Industry</a></div><div class="topic-ge">GE：Vladimir Masloboev · Dmitriy Makarov（均 Kola Science Centre, RAS，Russia）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">21</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Landscape_Planning_Europe" target="_blank" rel="noopener">Landscape Planning and Management in Europe: Methods, Tools and Approaches</a></div><div class="topic-ge">GE：Sergio Serra · Chiara Garau · Anna Maria Colavitti（均 University of Cagliari，Italy）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">22</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/business_model_cooperate_sustainability" target="_blank" rel="noopener">Business Model Innovation for Corporate Sustainability</a></div><div class="topic-ge">GE：Mikhail Kozhevnikov（Russian Presidential Academy of National Economy and Public Administration，Russia）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">23</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Sustain_Supply_Chain_Innovation_Operation_Management" target="_blank" rel="noopener">Sustainable Supply Chain Innovation and Operation Management</a></div><div class="topic-ge">GE：Xiaochen Sun（Tianjin University，China）· Guihong Zhao（Civil Aviation University of China，China）· Xiaohang Yue（University of Wisconsin-Milwaukee，USA）· Guo Li（Beijing Institute of Technology，China）· Yi He（Hainan University，China）· Lei Xu（Civil Aviation University of China，China）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">24</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Road_Safety_and_Travel_Efficiency_in_Sustain_Urban_Transport" target="_blank" rel="noopener">Methods and Measures to Improve Road Safety and Travel Efficiency in Sustainable Urban Transport Management</a></div><div class="topic-ge">GE：Jacek Oskarbski（Gdansk University of Technology，Poland）· Miroslava Mikušová（University of Žilina，Slovakia）· Kyandoghere Kyamakya（University of Klagenfurt，Austria）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">25</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/fire_safety_tech-human_behav_for_build_sustain" target="_blank" rel="noopener">Fire Safety Technology and Human Behavioural Science for Building Sustainability</a></div><div class="topic-ge">GE：Jun-Ho Choi · Joon-Ho Jeon（均 Pukyong National University，South Korea）· Haejun Park（Oklahoma State University，USA）· Young-Chan Kim（Chungwoon University，South Korea）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">26</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Data-Driven_Analysis_Control_Methods_ITS_Accident_Prevention" target="_blank" rel="noopener">Data-Driven Analysis and Control Methods in ITS and Accident Prevention</a></div><div class="topic-ge">GE：Changxi Ma（Lanzhou Jiaotong University，China）· Xuecai Xu（Huazhong University of Science and Technology，China）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">27</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Sustain_Supply_Chain_Logistics_Management_in_Digital_Age" target="_blank" rel="noopener">Sustainable Supply Chain and Logistics Management in a Digital Age</a></div><div class="topic-ge">GE：Guo Li · Huamin Wu（均 Beijing Institute of Technology，China）· Jiasen Sun（Soochow University，China）· Sachin Mangla（University of Plymouth，UK）· Xiaohang Yue（University of Wisconsin-Milwaukee，USA）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">28</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Design_Optimization_RES" target="_blank" rel="noopener">Design and Optimization of Renewable Energy Systems</a></div><div class="topic-ge">GE：Konstantin Volkov（Kingston University London，UK）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">29</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Behavior_Change_Toward_Sustainable_Transport" target="_blank" rel="noopener">Promoting Behavior Change Toward Sustainable Transport</a></div><div class="topic-ge">GE：E. Owen D. Waygood（Polytechnique Montréal，Canada）· Erel Avineri（Afeka Tel Aviv Academic College of Engineering，Israel）· Anne-Sophie Gousse-Lessard（Université du Québec à Montréal，Canada）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">30</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Digital_Manufacturing_Industrial_Sustainability" target="_blank" rel="noopener">Digital Manufacturing and Industrial Sustainability</a></div><div class="topic-ge">GE：Flavio Tonelli · Melissa Demartini（均 University of Genoa，Italy）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">31</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Advanced_Sustainable_Mobility" target="_blank" rel="noopener">Advanced Transport Systems and Methods for Design of Sustainable Mobility</a></div><div class="topic-ge">GE：Gino D'Ovidio · Antonio Ometto（均 University of L'Aquila，Italy）</div></li>
+      <li class="topic-row topic-extra"><div class="topic-line"><span class="topic-idx num">32</span><a class="topic-title" href="https://www.mdpi.com/journal/sustainability/special_issues/Recovery_and_Sustainability_of_Sport_Sector_during_COVID19_Pandemic" target="_blank" rel="noopener">Recovery and Sustainability of the Sport Sector during the COVID-19 Pandemic</a></div><div class="topic-ge">GE：Fernando Lera-Lopez（Public University of Navarre，Spain）· Themistocles Kokolakakis · Girish Ramchandani（均 Sheffield Hallam University，UK）</div></li>
+    </ol>
+    <button type="button" class="topic-toggle" id="topicToggle" aria-expanded="false">展开全部 32 条 ↓</button>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><span class="idx">05</span><h2>教育背景</h2></div>
+    <div class="foot-grid">
+      <div>
+        <div class="edu-org">河南师范大学 · 经济学 · 本科</div>
+        <div class="edu-meta num">2011-09 — 2015-07</div>
+        <div class="pill-row">
+          <span class="pill">英语四级</span>
+          <span class="pill">英语六级</span>
+          <span class="pill">计算机二级</span>
+        </div>
+      </div>
+      <div>
+        <div class="edu-org">兴趣爱好</div>
+        <div class="pill-row">
+          <span class="pill pill-neutral">爱猫猫猫猫猫猫</span>
+          <span class="pill pill-neutral">CrossFit</span>
+          <span class="pill pill-neutral">跳舞</span>
+          <span class="pill pill-neutral">旅行</span>
+          <span class="pill pill-neutral">摄影</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>王聪聪 Nicole Wang</span>
+    <div class="foot-wechat">
+      <span>WeChat：</span>
+      <img src="wechat-qr.png" alt="王聪聪的微信二维码" width="96" height="96">
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  // contact chips: tap/hover reveal + copy
+  document.querySelectorAll('.contact-chip').forEach(function(chip){
+    chip.addEventListener('click', function(e){
+      if(e.target.closest('a, button')) return;
+      chip.classList.toggle('revealed');
+    });
+  });
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var text = btn.getAttribute('data-copy');
+      var restore = btn.textContent;
+      var mark = function(ok){
+        btn.textContent = ok ? '✓' : '×';
+        setTimeout(function(){ btn.textContent = restore; }, 1200);
+      };
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){ mark(true); }).catch(function(){ mark(false); });
+      } else {
+        mark(false);
+      }
+    });
+  });
+
+  // topic list expand/collapse
+  var topicToggle = document.getElementById('topicToggle');
+  if(topicToggle){
+    topicToggle.addEventListener('click', function(){
+      var list = document.querySelector('.topic-list');
+      var expanded = list.classList.toggle('expanded');
+      topicToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      topicToggle.textContent = expanded ? '收起 ↑' : '展开全部 32 条 ↓';
+    });
+  }
+
+  // nav scrollspy
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.jumpnav a'));
+  var sections = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if('IntersectionObserver' in window && sections.length){
+    var current = null;
+    var setActive = function(id){
+      if(id === current) return;
+      current = id;
+      links.forEach(function(a){
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    };
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ setActive(entry.target.id); }
+      });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
+    sections.forEach(function(sec){ io.observe(sec); });
+  }
+})();
+</script>
+
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2409a7552e1948d8a295d0345c069651"}'></script><!-- End Cloudflare Web Analytics -->
