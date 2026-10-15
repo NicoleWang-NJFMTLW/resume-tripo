@@ -8,66 +8,66 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>
   :root{
-    --bg:#f6f4f9;
+    --bg:#ffffff;
     --surface:#ffffff;
-    --surface-2:#ece7f2;
-    --border:#ddd4e8;
-    --text:#241f33;
-    --text-muted:#6b6178;
-    --text-faint:#948ba0;
-    --accent:#7d6bab;
-    --accent-strong:#584a7c;
-    --accent-tint:#efeaf8;
-    --gold:#ad7f45;
-    --gold-tint:#f5ecdc;
-    --job-teal:#3f7d78;
-    --job-teal-tint:#e5f0ee;
-    --job-rose:#a2584f;
-    --job-rose-tint:#f6e9e7;
-    --shadow: 0 1px 2px rgba(36,31,51,.05), 0 8px 24px -12px rgba(36,31,51,.12);
+    --surface-2:#f2f2f2;
+    --border:#dadada;
+    --text:#111111;
+    --text-muted:#555555;
+    --text-faint:#8a8a8a;
+    --accent:#111111;
+    --accent-strong:#111111;
+    --accent-tint:#f2f2f2;
+    --gold:#111111;
+    --gold-tint:#f2f2f2;
+    --job-teal:#111111;
+    --job-teal-tint:#f2f2f2;
+    --job-rose:#111111;
+    --job-rose-tint:#f2f2f2;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px -14px rgba(0,0,0,.10);
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
     color-scheme: light;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#17151d;
-      --surface:#1e1b26;
-      --surface-2:#252030;
-      --border:#332c40;
-      --text:#eae7ee;
-      --text-muted:#aca2b8;
-      --text-faint:#7d7389;
-      --accent:#b6a4e0;
-      --accent-strong:#cabdea;
-      --accent-tint:#2c2438;
-      --gold:#dcb37a;
-      --gold-tint:#3a2f22;
-      --job-teal:#7fb8b0;
-      --job-teal-tint:#1c2e2b;
-      --job-rose:#d18f86;
-      --job-rose-tint:#33231f;
+      --bg:#111111;
+      --surface:#1a1a1a;
+      --surface-2:#222222;
+      --border:#333333;
+      --text:#ededed;
+      --text-muted:#a8a8a8;
+      --text-faint:#777777;
+      --accent:#ededed;
+      --accent-strong:#ffffff;
+      --accent-tint:#262626;
+      --gold:#ededed;
+      --gold-tint:#262626;
+      --job-teal:#ededed;
+      --job-teal-tint:#262626;
+      --job-rose:#ededed;
+      --job-rose-tint:#262626;
       --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
       color-scheme: dark;
     }
   }
   :root[data-theme="dark"]{
-    --bg:#17151d;
-    --surface:#1e1b26;
-    --surface-2:#252030;
-    --border:#332c40;
-    --text:#eae7ee;
-    --text-muted:#aca2b8;
-    --text-faint:#7d7389;
-    --accent:#b6a4e0;
-    --accent-strong:#cabdea;
-    --accent-tint:#2c2438;
-    --gold:#dcb37a;
-    --gold-tint:#3a2f22;
-    --job-teal:#7fb8b0;
-    --job-teal-tint:#1c2e2b;
-    --job-rose:#d18f86;
-    --job-rose-tint:#33231f;
+    --bg:#111111;
+    --surface:#1a1a1a;
+    --surface-2:#222222;
+    --border:#333333;
+    --text:#ededed;
+    --text-muted:#a8a8a8;
+    --text-faint:#777777;
+    --accent:#ededed;
+    --accent-strong:#ffffff;
+    --accent-tint:#262626;
+    --gold:#ededed;
+    --gold-tint:#262626;
+    --job-teal:#ededed;
+    --job-teal-tint:#262626;
+    --job-rose:#ededed;
+    --job-rose-tint:#262626;
     --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -12px rgba(0,0,0,.5);
     color-scheme: dark;
   }
@@ -244,9 +244,9 @@
   nav.jumpnav a:hover{background:var(--surface-2); color:var(--text);}
   nav.jumpnav a.active{background:var(--accent); color:#fff;}
   @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]) nav.jumpnav a.active{color:#1a1622;}
+    :root:not([data-theme="light"]) nav.jumpnav a.active{color:#111111;}
   }
-  :root[data-theme="dark"] nav.jumpnav a.active{color:#1a1622;}
+  :root[data-theme="dark"] nav.jumpnav a.active{color:#111111;}
 
   /* ---- sections ---- */
   section{margin-bottom:52px; scroll-margin-top: 56px;}
@@ -666,10 +666,9 @@
     <div class="identity">
       <img class="avatar" src="avatar-cats.png" alt="王聪聪和六只猫（还有一只客串猫头鹰）的3D手办插画" width="112" height="112">
       <div>
-        <h1>王聪聪 <span style="color:var(--text-muted); font-weight:400; font-size:.6em;">Nicole Wang</span></h1>
-        <p class="role">用户增长 · 高校与机构合作 · 10年经验</p>
+        <h1>王聪聪 <span style="color:var(--text-muted); font-weight:500; font-size:.55em; font-family:'IBM Plex Mono',ui-monospace,Menlo,monospace; letter-spacing:-.02em;">Nicole Wang</span></h1>
+        <p class="role">用户增长 · 高校与机构合作 · 近10年经验</p>
         <div class="tags">
-          <span class="tag">10年经验</span>
           <span class="tag">北京</span>
           <span class="tag">ENTJ</span>
           <span class="tag">用户分层增长</span>
@@ -716,12 +715,12 @@
   <section id="summary">
     <div class="section-head"><span class="idx">01</span><h2>自我评价</h2></div>
     <div class="summary-card">
-      <p>4年房地产交易咨询与运营，近6年外企科技学术出版及科研文献数据库工作经验，2026年主导AI4Science人才对接业务从0到1搭建；擅长用户分层增长、高校与机构合作拓展，以及借助数据和AI工具搭建业务系统。核心优势：</p>
+      <p>近10年工作经历，覆盖交易咨询、学术出版与专家合作、科研数据和AI4Science，具备5年外企（MDPI）工作经历；2026年主导AI4Science人才对接业务从0到1搭建；擅长用户分层增长、高校与机构合作拓展，以及借助数据和AI工具搭建业务系统。核心优势：</p>
       <ul>
         <li><b>用户分层与增长：</b>主导FP免费发表增长项目，设计学者个人与高校机构两条线，与上一年发文数据对比，投稿量增长40%、核心作者复投率提升35%；主导约100个热点专栏，二次合作率超50%。</li>
-        <li><b>高校与机构合作：</b>在东壁新增20+家机构客户（含试用与正式签约），推进中订单金额数十万元，其中约5万元进入落地阶段；在MDPI期间赴高校开展作者培训会、宣讲会，与院系老师直接对接。</li>
+        <li><b>高校与机构合作：</b>在东壁新增20+家机构客户（含试用与签约），推进中订单金额数十万元，其中约5万元进入落地阶段；在MDPI期间赴高校开展作者培训会、宣讲会，与院系老师直接对接。</li>
         <li><b>业务与系统从0到1：</b>在Audax Lab设计学者供给与企业需求双边撮合机制；借助AI编程工具搭建三个数据互通的系统和运营看板，独立完成数据清洗、匹配与分析。</li>
-        <li><b>全球学者资源：</b>累计建联十几万学者，与约2000名高影响力学者保持合作；在Audax Lab从零搭建学者池，现有记录近4000条。</li>
+        <li><b>全球学者资源：</b>累计建联十几万学者，与约2000名高影响力学者保持合作；在Audax Lab从零搭建近4000人的学者池。</li>
         <li><b>团队管理：</b>管理约20人团队，推动小组业绩从后三名提升至前三名；累计面试200+人，提出的带教机制在全科室推行。</li>
       </ul>
     </div>
@@ -759,12 +758,12 @@
         <div class="job-body">
         <p class="org-blurb">公司介绍（官网 audaxlab.com）：用AI攻克科学挑战，业务包括AI4S研究（流体力学、生命科学、材料科学）与长周期复杂任务协作平台；合作研究者来自Stanford、MIT、UC Berkeley、清华、北大、普林斯顿等30余所全球顶尖高校。公司代表项目：与全球领先的大模型实验室合作长周期任务评测；为头部大模型公司绘制全球研究人员图谱。</p>
 
-        <p class="thesis">我的核心成果：从零搭建近4,000人的学者池，其中通过领英、小红书主动新增专家550+位；企业需求池80+家；与CEO共同完成首单撮合，毛利率约28%；借助AI工具自建三个运营系统，为企业需求自动推荐匹配学者，累计生成1,400+组候选匹配。</p>
+        <p class="thesis">我的核心成果：从零搭建近4000人的学者池，其中通过领英、小红书主动新增专家550+位；企业需求池80+家；与CEO共同完成首单撮合，毛利率约28%；借助AI工具自建三个运营系统，为企业需求自动推荐匹配学者，累计生成1400+组候选匹配。</p>
 
         <div class="block">
           <h4><span class="b-idx">1</span> 业务规划</h4>
           <ul>
-            <li>设计学者/企业双向合作模式（学者带项目、Lab发起项目、联合企业发起项目），规划人才撮合、数据合成与专家评测、顾问服务三类业务方向。</li>
+            <li>设计学者与企业双向合作模式，规划人才撮合、数据合成与专家评测、顾问服务三类业务方向。</li>
             <li>带领3人小组完成业务规划、渠道拓展与复盘。</li>
           </ul>
         </div>
@@ -772,8 +771,8 @@
         <div class="block">
           <h4><span class="b-idx">2</span> 专家供给</h4>
           <ul>
-            <li>建立学者画像与分级体系，通过学术数据库、领英、小红书、熟人转介绍等渠道招募，覆盖数学、计算机、生物、医学、物理等领域。</li>
-            <li>以专家的核心诉求（报酬、算力等科研资源）为切入点策划内容，吸引专家主动咨询；设计学者邀请裂变机制，结合接口成本设定每日50人的邀请节奏。</li>
+            <li>建立学者画像与分级体系，覆盖数学、计算机、生物、医学、物理等领域。</li>
+            <li>通过社媒运营、定向邀约与专项科研合作招募专家。</li>
             <li>策划线上沙龙及闭门交流活动。</li>
           </ul>
         </div>
@@ -782,7 +781,7 @@
           <h4><span class="b-idx">3</span> 需求与商务</h4>
           <ul>
             <li>搭建覆盖大模型、AI4Science、生物医药、材料化学、具身智能、数学物理六大方向的企业需求池，设计企业需求与学者方向的匹配逻辑及B端获客打法。</li>
-            <li>与CEO共同完成首单专家撮合的两端定价谈判（专家报酬与企业报价）。</li>
+            <li>与CEO共同完成首单业务，制定专家报酬与企业报价的定价策略。</li>
             <li>在AI4S工作台中设计市场进展与商机的定期更新机制，持续跟踪行业动态与企业需求；与第三方数据服务机构沟通大模型专家供给的需求、用途与报价。</li>
           </ul>
         </div>
@@ -804,11 +803,11 @@
             <div class="job-title"><span class="job-chevron"></span><h3>东壁科技数据有限责任公司 · 市场部商务经理</h3></div>
           </div>
           <p class="place">北京</p>
-          <p class="teaser">科技文献数据库高校与机构拓展（B2B），新增20+家机构客户（含试用与正式签约）。</p>
+          <p class="teaser">科技文献数据库高校与机构拓展（B2B），新增20+家机构客户（含试用与签约）。</p>
         </summary>
         <div class="job-body">
         <ul>
-          <li><b>高校机构拓展与关系维护：</b>负责科技文献数据库dbdata及ResearchTool产品的市场分析，高校、机构、协会拓展，通过邮件、拜访及学术会议交流，与国内重点高校专家&院长、学会负责人、图书馆及学术出版社建立合作联系；在职期间成功拓展20+家新机构客户（含试用与正式签约），推进中订单金额数十万元，其中约5万元进入落地阶段；参与标书撰写审核与竞标流程。</li>
+          <li><b>高校机构拓展与关系维护：</b>负责科技文献数据库dbdata及ResearchTool产品的市场分析，高校、机构、协会拓展，通过邮件、拜访及学术会议交流，与国内重点高校专家与院长、学会负责人、图书馆及学术出版社建立合作联系；在职期间成功拓展20+家新机构客户（含试用与签约），推进中订单金额数十万元，其中约5万元进入落地阶段；参与标书撰写审核与竞标流程。</li>
           <li><b>学术合作：</b>需求诊断与方案对接——针对期刊运营现状，从学术研究热点、专家学术背景、论文质量、作者群体分布、引用情况等维度进行全盘诊断，根据客户需求及产品能力转化为可实施项目合作方案。</li>
           <li><b>产品优化：</b>追踪行业动态，结合用户反馈，协同技术团队推动ResearchTool 2.0版本规划与功能迭代（使用功能点、权限管理），提升产品在学术场景下的适配度。</li>
           <li><b>市场部基础搭建：</b>2025年4月入职后独立搭建市场部机构信息统计总表、合作方案体系与客户管理表格，形成客户拓展与跟进的标准化流程；带教后续加入的同事上手业务。</li>
@@ -825,7 +824,7 @@
             <div class="job-title"><span class="job-chevron"></span><h3>曼迪匹艾（北京）科技服务有限公司 · Editor & Team leader【学术合作 & 团队负责人】</h3></div>
           </div>
           <p class="place">北京</p>
-          <p class="teaser">5年全球学术合作与期刊运营，管理20人团队，主导约100个热点专栏策划。</p>
+          <p class="teaser">5年全球学术合作与期刊运营，管理约20人团队，主导约100个热点专栏策划，负责多本期刊的运营管理。</p>
         </summary>
         <div class="job-body">
 
@@ -833,7 +832,7 @@
           <summary>全球专家学者合作运营</summary>
           <div class="subbody">
             <ul>
-              <li>通过数据提取&过滤&清洗、定向邀约，官方招募，推荐激励，研讨会，学术会议，线下高校拜访等方式，累计建联十几万学者，与约2,000名高影响力专家教授保持良好合作关系，在识别高潜力高影响力专家方面具备成熟方法论。</li>
+              <li>通过数据提取、过滤与清洗，以及定向邀约、官方招募、推荐激励、研讨会、学术会议、线下高校拜访等方式，累计建联十几万学者，与约2000名高影响力专家教授保持良好合作关系，在识别高潜力高影响力专家方面具备成熟方法论。</li>
               <li>依据学者学术背景、成果活跃度及合作网络进行分层管理与运营，支撑不同层级学术合作需求；合作领域覆盖可持续发展、AI、大数据、智能交通、能源、经济等方向。</li>
             </ul>
           </div>
@@ -853,8 +852,9 @@
           <summary>学术期刊学科运营与影响力提升</summary>
           <div class="subbody">
             <ul>
-              <li>负责可持续发展、物流、交通、智慧城市、供应链、bigdata、能源存储、碳中和、AI应用，宗教、哲学、人文、医药等领域期刊日常运营，包括专家招募管理、研究项目合作、论文管理&质量把控、数据监管；负责期刊整体发展方向、发文数量、质量等数据监督与预算管理。</li>
+              <li>负责可持续发展、物流、交通、智慧城市、供应链、大数据、能源存储、碳中和、AI应用、宗教、哲学、人文、医药等领域期刊日常运营，包括专家招募管理、研究项目合作、论文管理与质量把控、数据监管；负责期刊整体发展方向、发文数量、质量等数据监督与预算管理。</li>
               <li>通过学术成果定向推送（issue cover、newsletter、title story等定期推广素材）、奖项设定及社交媒体运营（Twitter / LinkedIn / 公众号），提升期刊在目标学者群体中的可见度与互动率。</li>
+              <li>主导Twitter（X）新媒体矩阵运营，通过热点选题+内容分层策略，实现粉丝量增长、互动率提升。</li>
             </ul>
           </div>
         </details>
@@ -863,7 +863,7 @@
           <summary>跨领域学术热点项目策划与全周期管理</summary>
           <div class="subbody">
             <ul>
-              <li>针对学术发表研究成果及最新研究项目&热点进行可行性调研分析，主导策划并上线约<b>100个</b>热点研究项目/专栏（平均每个由来自3个不同国家的教授共同开展），累计联系学者3w+，收集投稿2k+篇，成功发表约1k篇。</li>
+              <li>针对学术发表研究成果及最新研究项目与热点进行可行性调研分析，主导策划并上线约<b>100个</b>热点研究项目/专栏（平均每个由来自3个不同国家的教授共同开展），累计联系学者3万+，收集投稿2000+篇，成功发表近1000篇。</li>
               <li>负责合作前学者调研、合作计划洽谈、项目推进与复盘的全流程管理，项目二次合作率超50%。</li>
             </ul>
           </div>
@@ -873,7 +873,7 @@
           <summary>论文管理</summary>
           <div class="subbody">
             <ul>
-              <li>累计处理与质量检查10,000+篇稿件：文章初筛与发表前后质量检查，包括但不限于：作者学术背景、研究诚信、文章关联性、文章是否具备新颖性等。</li>
+              <li>累计处理与质量检查10000+篇稿件：文章初筛与发表前后质量检查，包括但不限于：作者学术背景、研究诚信、文章关联性、文章是否具备新颖性等。</li>
               <li>负责组织sustainability、pathogens、societies、pharmacy、religions、humanities、education sciences、future transportation、pediatric reports等领域学术发表全流程管理：同行评审，作者、审稿人、编委答疑，文章校对检查等。</li>
             </ul>
           </div>
@@ -905,7 +905,6 @@
             <ul>
               <li>负责岗前培训：业务主讲、材料发放，并为培训生答疑及判定成绩，累计负责岗前培训50余次。</li>
               <li>组织50+次团队活动与知识分享；组织小组/科室的经验分享和案例分析，挖掘协调业绩出色的同事做分享30余次；总结各模块常用邮件模板并系统化沉淀，协调科室海外培训安排。</li>
-              <li>主导Twitter（X）新媒体矩阵运营，通过热点选题+内容分层策略，实现粉丝量增长、互动率提升。</li>
               <li>作为4名AE与6名SME的Mentor：负责新入职及转型期员工的知识传授和疑难解答，包括工作开展方式、流程梳理与解疑思路、复盘方法，引导团队形成"计划-执行-结果-复盘"的良好工作习惯。</li>
             </ul>
           </div>
@@ -914,7 +913,7 @@
       </details>
 
       <!-- FANGYUAN -->
-      <details class="job" data-print-collapsed style="--job-accent:var(--job-rose); --job-tint:var(--job-rose-tint);">
+      <details class="job" style="--job-accent:var(--job-rose); --job-tint:var(--job-rose-tint);">
         <summary>
           <div class="job-head">
             <span class="when num">2015-06 — 2019-05</span>
@@ -924,8 +923,9 @@
         </summary>
         <div class="job-body">
         <ul>
+          <li><b>交易金融顾问：</b>对接多家银行，作为银行、客户与经纪人之间的桥梁，帮助经纪人解决客户在房产交易中的资金问题。</li>
           <li><b>业务运营与风险管理：</b>主导300+笔B端/C端交易全流程管理，为有资金困难的客户提供定制化解决方案；设计风险预警机制，识别并化解50+件高风险交易单，降低业务风险；推行"交易流程满意度评价系统"，通过数据驱动优化服务流程，使客户满意度在两季度内实现倍增。</li>
-          <li><b>团队培训与业务支持：</b>负责运营端银行政策、监管要求及金融产品培训，标准化交易流程SOP及培训课程，赋能1,000+经纪人，累计培训场次200+，参训人员覆盖率99%；建立疑难案例库与解决方案手册，提升问题解决效率。</li>
+          <li><b>团队培训与业务支持：</b>负责运营端银行政策、监管要求及金融产品培训，标准化交易流程SOP及培训课程，赋能1000+经纪人，累计培训场次200+，参训人员覆盖率99%；建立疑难案例库与解决方案手册，提升问题解决效率。</li>
           <li><b>公证业务支持：</b>作为公证业务助理，全程支持公证事务办理，包括客户咨询解答、材料预审、现场取证（录音/录像/影像记录）及出证协调，协助完成金融类公证业务150+件，确保合规性与时效性。</li>
         </ul>
         </div>
@@ -984,16 +984,6 @@
           <span class="pill">英语四级</span>
           <span class="pill">英语六级</span>
           <span class="pill">计算机二级</span>
-        </div>
-      </div>
-      <div>
-        <div class="edu-org">兴趣爱好</div>
-        <div class="pill-row">
-          <span class="pill pill-neutral">爱猫猫猫猫猫猫</span>
-          <span class="pill pill-neutral">CrossFit</span>
-          <span class="pill pill-neutral">跳舞</span>
-          <span class="pill pill-neutral">旅行</span>
-          <span class="pill pill-neutral">摄影</span>
         </div>
       </div>
     </div>
